@@ -4,7 +4,7 @@ SublimeLinter-contrib-xvlog
 This linter plugin for [SublimeLinter][docs] provides an interface to [xvlog (from Xilinx Vivado Simulator)](http://www.xilinx.com/products/design-tools/vivado.html). It will be used with files that have the “Verilog” syntax.
 
 ## Installation
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+SublimeLinter 4 must be installed in order to use this plugin. If SublimeLinter 4 is not installed, please follow the instructions [here][installation].
 
 ### Linter installation
 Before using this plugin, you must ensure that `xvlog` is installed on your system. To install `xvlog`, follow the instruction given in [this PDF document](http://www.xilinx.com/support/documentation/sw_manuals/xilinx2014_4/ug973-vivado-release-notes-install-license.pdf) page.
