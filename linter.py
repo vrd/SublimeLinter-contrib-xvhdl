@@ -8,30 +8,24 @@
 # License: MIT
 #
 
-"""This module exports the Xvhdl plugin class."""
+"""This module exports the Xvlog plugin class."""
 
 from SublimeLinter.lint import Linter
 
 
-class Xvhdl(Linter):
+class Xvlog(Linter):
 
-    """Provides an interface to xvhdl (from Xilinx Vivado Simulator)."""
+    """Provides an interface to xvlog (from Xilinx Vivado Simulator)."""
 
-    name = 'xvhdl'
-    cmd = 'xvhdl @'
+    name = 'xvlog'
+    cmd = 'xvlog @'
     defaults = {
-        'selector': 'source.vhdl',
+        'selector': 'source.v',
     }
 
-    # the following attributes are marked useless for SL4
-    #version_args = '--version --nolog'
-    #version_re = r'Vivado Simulator (?P<version>\d+\.\d+)'
-    #version_requirement = '>= 2014.4'
-    #tempfile_suffix = 'vhd'
-
-    # Here is a sample xvhdl error output:
+    # Here is a sample xvlog error output:
     # ----8<------------
-    # ERROR: [VRFC 10-91] td_logic is not declared [/home/BrunoJJE/src/filtre8.vhd:35]
+    # ERROR: [VRFC 10-91] td_logic is not declared [/home/project/src/filter.v:35]
     # ----8<------------
 
     regex = (
@@ -51,6 +45,6 @@ class Xvhdl(Linter):
         match, line, col, error, warning, message, near = super().split_match(match)
 
         if match:
-            message = '[xvhdl] ' + message
+            message = '[xvlog] ' + message
 
         return match, line, col, error, warning, message, near
